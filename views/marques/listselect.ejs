@@ -1,0 +1,9 @@
+var marques = "";
+
+<% marque.forEach(function(element) {%>
+    marques += "<option value='<%=element._id%>' selected><%= element.nom%></option>";
+<% }); %>
+
+$(document).ready(function() { 
+    $("#selectproduit").html(marques);
+});

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 m-4 text-center">
+                <h1>Modèles</h1>
+            </div>
+            <a class="btn btn-primary js-scroll-trigger mt-5" href="/automates/ajout">Ajouter un modèle</a>
+
+            <table class="col-lg-10 table table-bordered table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom de l'automate</th>
+                        <th scope="col">Marque</th>
+                        <th scope="col">configuration</th>
+                        <th scope="col">Serial</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% automate.forEach(function(element) {%>
+                    <tr>
+                        <td>
+                            <%= element.nom%>
+                        </td>
+                        <td>
+                            <%= element.id_marque[0].nom %>
+                        </td>
+                        <td>
+                            <%= element.configuration%>
+                        </td>
+                        <td>
+                            <%= element.serial%>
+                        </td>
+                        <td>
+                           
+                            <a type="button" class="btn btn-info" href="/automates/edit/<%=element._id %>">
+                                modifier
+                                </a>
+                            <a type="button" class="btn btn-danger" href="/automates/remove/<%=element._id %>">
+                            supprimer
+                            </a>
+                        </td>
+                    </tr>
+                    <%})%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 m-4 text-center">
+                <h1>Marques</h1>
+            </div>
+            <a class="btn btn-primary js-scroll-trigger mt-5" href="/marques/ajout">Ajouter une marque</a>
+
+            <table class="col-lg-10 table table-bordered table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom de la marque</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% marque.forEach(function(element) {%>
+                    <tr>
+                        <td>
+                            <%= element.nom%>
+                        </td>
+                        <td>
+                            <i class="fas fa-edit"></i>
+                            </a>
+                            <i class="text-danger fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <%})%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
